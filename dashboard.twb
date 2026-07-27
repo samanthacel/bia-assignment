@@ -1,0 +1,1745 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20262.26.0603.1643                               -->
+<workbook original-version='18.1' source-build='2026.2.0 (20262.26.0603.1643)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='fact_flight+ (airline_data_warehouse)' inline='true' name='federated.052fjwo1a8cb7m1diu1qq0jeb6xc' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='airline_data_warehouse' name='excel-direct.1ueidq506d4km613go5rm1tx3epl'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='/Users/samanthamichelle/Desktop/S2 MATERIALS/S2P2 Business Intelligence &amp; Analytics/assignment/bia_assignment_code/airline_data_warehouse.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation name='Pivot' type='pivot'>
+            <columns>
+              <column datatype='string' name='Pivot Field Names' />
+              <column datatype='real' name='Pivot Field Values' />
+            </columns>
+            <tag name='Pivot Field Names'>
+              <value name='[Airport Fees]' />
+              <value name='[Catering Cost]' />
+              <value name='[Crew Cost]' />
+              <value name='[Depreciation Cost]' />
+              <value name='[Fuel Cost]' />
+              <value name='[Handling Cost]' />
+              <value name='[Insurance Cost]' />
+              <value name='[It Systems Cost]' />
+              <value name='[Maintenance Cost]' />
+              <value name='[Marketing Cost]' />
+              <value name='[Navigation Fees]' />
+              <value name='[Overhead Cost]' />
+              <value name='[Passenger Service Cost]' />
+              <value name='[Sales Distribution Cost]' />
+            </tag>
+            <groups>
+              <group name='Pivot Field Values'>
+                <field name='[fact_flight].[airport_fees]' />
+                <field name='[fact_flight].[catering_cost]' />
+                <field name='[fact_flight].[crew_cost]' />
+                <field name='[fact_flight].[depreciation_cost]' />
+                <field name='[fact_flight].[fuel_cost]' />
+                <field name='[fact_flight].[handling_cost]' />
+                <field name='[fact_flight].[insurance_cost]' />
+                <field name='[fact_flight].[it_systems_cost]' />
+                <field name='[fact_flight].[maintenance_cost]' />
+                <field name='[fact_flight].[marketing_cost]' />
+                <field name='[fact_flight].[navigation_fees]' />
+                <field name='[fact_flight].[overhead_cost]' />
+                <field name='[fact_flight].[passenger_service_cost]' />
+                <field name='[fact_flight].[sales_distribution_cost]' />
+              </group>
+            </groups>
+            <relation connection='excel-direct.1ueidq506d4km613go5rm1tx3epl' name='fact_flight' table='[fact_flight$]' type='table'>
+              <columns gridOrigin='A1:AC7975:no:A1:AC7975:0' header='yes' outcome='6'>
+                <column datatype='string' name='flight_number' ordinal='0' />
+                <column datatype='integer' name='date_id' ordinal='1' />
+                <column datatype='integer' name='route_id' ordinal='2' />
+                <column datatype='integer' name='aircraft_id' ordinal='3' />
+                <column datatype='integer' name='demand_level_id' ordinal='4' />
+                <column datatype='integer' name='season_id' ordinal='5' />
+                <column datatype='integer' name='passengers' ordinal='6' />
+                <column datatype='real' name='load_factor' ordinal='7' />
+                <column datatype='real' name='flight_hours' ordinal='8' />
+                <column datatype='real' name='ticket_revenue' ordinal='9' />
+                <column datatype='real' name='ancillary_revenue' ordinal='10' />
+                <column datatype='real' name='total_revenue' ordinal='11' />
+                <column datatype='real' name='fuel_cost' ordinal='12' />
+                <column datatype='integer' name='maintenance_cost' ordinal='13' />
+                <column datatype='integer' name='crew_cost' ordinal='14' />
+                <column datatype='integer' name='depreciation_cost' ordinal='15' />
+                <column datatype='integer' name='insurance_cost' ordinal='16' />
+                <column datatype='real' name='airport_fees' ordinal='17' />
+                <column datatype='real' name='catering_cost' ordinal='18' />
+                <column datatype='real' name='handling_cost' ordinal='19' />
+                <column datatype='real' name='navigation_fees' ordinal='20' />
+                <column datatype='real' name='sales_distribution_cost' ordinal='21' />
+                <column datatype='real' name='passenger_service_cost' ordinal='22' />
+                <column datatype='real' name='overhead_cost' ordinal='23' />
+                <column datatype='real' name='marketing_cost' ordinal='24' />
+                <column datatype='real' name='it_systems_cost' ordinal='25' />
+                <column datatype='real' name='total_cost' ordinal='26' />
+                <column datatype='real' name='profit' ordinal='27' />
+                <column datatype='real' name='profit_margin' ordinal='28' />
+              </columns>
+            </relation>
+          </relation>
+          <relation connection='excel-direct.1ueidq506d4km613go5rm1tx3epl' name='dim_aircraft' table='[dim_aircraft$]' type='table'>
+            <columns gridOrigin='A1:C7:no:A1:C7:0' header='yes' outcome='6'>
+              <column datatype='integer' name='aircraft_id' ordinal='0' />
+              <column datatype='string' name='aircraft_type' ordinal='1' />
+              <column datatype='integer' name='aircraft_capacity' ordinal='2' />
+            </columns>
+          </relation>
+          <relation connection='excel-direct.1ueidq506d4km613go5rm1tx3epl' name='dim_date' table='[dim_date$]' type='table'>
+            <columns gridOrigin='A1:H367:no:A1:H367:0' header='yes' outcome='6'>
+              <column datatype='integer' name='date_id' ordinal='0' />
+              <column datatype='string' name='flight_date' ordinal='1' />
+              <column datatype='integer' name='day' ordinal='2' />
+              <column datatype='integer' name='month' ordinal='3' />
+              <column datatype='string' name='month_name' ordinal='4' />
+              <column datatype='integer' name='quarter' ordinal='5' />
+              <column datatype='integer' name='year' ordinal='6' />
+              <column datatype='integer' name='is_weekend' ordinal='7' />
+            </columns>
+          </relation>
+          <relation connection='excel-direct.1ueidq506d4km613go5rm1tx3epl' name='dim_demand_level' table='[dim_demand_level$]' type='table'>
+            <columns gridOrigin='A1:B3:no:A1:B3:0' header='yes' outcome='6'>
+              <column datatype='integer' name='demand_level_id' ordinal='0' />
+              <column datatype='string' name='demand_level' ordinal='1' />
+            </columns>
+          </relation>
+          <relation connection='excel-direct.1ueidq506d4km613go5rm1tx3epl' name='dim_route' table='[dim_route$]' type='table'>
+            <columns gridOrigin='A1:E31:no:A1:E31:0' header='yes' outcome='6'>
+              <column datatype='integer' name='route_id' ordinal='0' />
+              <column datatype='string' name='origin' ordinal='1' />
+              <column datatype='string' name='destination' ordinal='2' />
+              <column datatype='string' name='route' ordinal='3' />
+              <column datatype='string' name='route_category' ordinal='4' />
+            </columns>
+          </relation>
+          <relation connection='excel-direct.1ueidq506d4km613go5rm1tx3epl' name='dim_season' table='[dim_season$]' type='table'>
+            <columns gridOrigin='A1:B5:no:A1:B5:0' header='yes' outcome='6'>
+              <column datatype='integer' name='season_id' ordinal='0' />
+              <column datatype='string' name='season' ordinal='1' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[Pivot Field Names]' value='[Pivot].[Pivot Field Names]' />
+          <map key='[Pivot Field Values]' value='[Pivot].[Pivot Field Values]' />
+          <map key='[aircraft_capacity]' value='[dim_aircraft].[aircraft_capacity]' />
+          <map key='[aircraft_id (dim!aircraft)]' value='[dim_aircraft].[aircraft_id]' />
+          <map key='[aircraft_id]' value='[fact_flight].[aircraft_id]' />
+          <map key='[aircraft_type]' value='[dim_aircraft].[aircraft_type]' />
+          <map key='[ancillary_revenue]' value='[fact_flight].[ancillary_revenue]' />
+          <map key='[date_id (dim!date)]' value='[dim_date].[date_id]' />
+          <map key='[date_id]' value='[fact_flight].[date_id]' />
+          <map key='[day]' value='[dim_date].[day]' />
+          <map key='[demand_level]' value='[dim_demand_level].[demand_level]' />
+          <map key='[demand_level_id (dim!demand!level)]' value='[dim_demand_level].[demand_level_id]' />
+          <map key='[demand_level_id]' value='[fact_flight].[demand_level_id]' />
+          <map key='[destination]' value='[dim_route].[destination]' />
+          <map key='[flight_date]' value='[dim_date].[flight_date]' />
+          <map key='[flight_hours]' value='[fact_flight].[flight_hours]' />
+          <map key='[flight_number]' value='[fact_flight].[flight_number]' />
+          <map key='[is_weekend]' value='[dim_date].[is_weekend]' />
+          <map key='[load_factor]' value='[fact_flight].[load_factor]' />
+          <map key='[month]' value='[dim_date].[month]' />
+          <map key='[month_name]' value='[dim_date].[month_name]' />
+          <map key='[origin]' value='[dim_route].[origin]' />
+          <map key='[passengers]' value='[fact_flight].[passengers]' />
+          <map key='[profit]' value='[fact_flight].[profit]' />
+          <map key='[profit_margin]' value='[fact_flight].[profit_margin]' />
+          <map key='[quarter]' value='[dim_date].[quarter]' />
+          <map key='[route]' value='[dim_route].[route]' />
+          <map key='[route_category]' value='[dim_route].[route_category]' />
+          <map key='[route_id (dim!route)]' value='[dim_route].[route_id]' />
+          <map key='[route_id]' value='[fact_flight].[route_id]' />
+          <map key='[season]' value='[dim_season].[season]' />
+          <map key='[season_id (dim!season)]' value='[dim_season].[season_id]' />
+          <map key='[season_id]' value='[fact_flight].[season_id]' />
+          <map key='[ticket_revenue]' value='[fact_flight].[ticket_revenue]' />
+          <map key='[total_cost]' value='[fact_flight].[total_cost]' />
+          <map key='[total_revenue]' value='[fact_flight].[total_revenue]' />
+          <map key='[year]' value='[dim_date].[year]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[fact_flight]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>1</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:AC7975:no:A1:AC7975:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[dim_aircraft]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:C7:no:A1:C7:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[dim_date]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:H367:no:A1:H367:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[dim_demand_level]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:B3:no:A1:B3:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[dim_route]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:E31:no:A1:E31:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[dim_season]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:B5:no:A1:B5:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>flight_number</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[flight_number]</local-name>
+            <parent-name>[fact_flight]</parent-name>
+            <remote-alias>flight_number</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RID_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[date_id]</local-name>
+            <parent-name>[fact_flight]</parent-name>
+            <remote-alias>date_id</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>route_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[route_id]</local-name>
+            <parent-name>[fact_flight]</parent-name>
+            <remote-alias>route_id</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>aircraft_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[aircraft_id]</local-name>
+            <parent-name>[fact_flight]</parent-name>
+            <remote-alias>aircraft_id</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>demand_level_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[demand_level_id]</local-name>
+            <parent-name>[fact_flight]</parent-name>
+            <remote-alias>demand_level_id</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>season_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[season_id]</local-name>
+            <parent-name>[fact_flight]</parent-name>
+            <remote-alias>season_id</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>passengers</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[passengers]</local-name>
+            <parent-name>[fact_flight]</parent-name>
+            <remote-alias>passengers</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>load_factor</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[load_factor]</local-name>
+            <parent-name>[fact_flight]</parent-name>
+            <remote-alias>load_factor</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>flight_hours</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[flight_hours]</local-name>
+            <parent-name>[fact_flight]</parent-name>
+            <remote-alias>flight_hours</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ticket_revenue</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[ticket_revenue]</local-name>
+            <parent-name>[fact_flight]</parent-name>
+            <remote-alias>ticket_revenue</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ancillary_revenue</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[ancillary_revenue]</local-name>
+            <parent-name>[fact_flight]</parent-name>
+            <remote-alias>ancillary_revenue</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_revenue</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[total_revenue]</local-name>
+            <parent-name>[fact_flight]</parent-name>
+            <remote-alias>total_revenue</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_cost</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[total_cost]</local-name>
+            <parent-name>[fact_flight]</parent-name>
+            <remote-alias>total_cost</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>profit</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[profit]</local-name>
+            <parent-name>[fact_flight]</parent-name>
+            <remote-alias>profit</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>profit_margin</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[profit_margin]</local-name>
+            <parent-name>[fact_flight]</parent-name>
+            <remote-alias>profit_margin</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Names</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Pivot Field Names]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Names</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Values</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Pivot Field Values]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Values</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>aircraft_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[aircraft_id (dim!aircraft)]</local-name>
+            <parent-name>[dim_aircraft]</parent-name>
+            <remote-alias>aircraft_id</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[dim!aircraft_6692EB886436482596A73FB809FF788D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>aircraft_type</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[aircraft_type]</local-name>
+            <parent-name>[dim_aircraft]</parent-name>
+            <remote-alias>aircraft_type</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RID_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[dim!aircraft_6692EB886436482596A73FB809FF788D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>aircraft_capacity</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[aircraft_capacity]</local-name>
+            <parent-name>[dim_aircraft]</parent-name>
+            <remote-alias>aircraft_capacity</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[dim!aircraft_6692EB886436482596A73FB809FF788D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[date_id (dim!date)]</local-name>
+            <parent-name>[dim_date]</parent-name>
+            <remote-alias>date_id</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[dim!date_5B009C90D1754666A9C961608D96D610]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>flight_date</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[flight_date]</local-name>
+            <parent-name>[dim_date]</parent-name>
+            <remote-alias>flight_date</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RID_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[dim!date_5B009C90D1754666A9C961608D96D610]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>day</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[day]</local-name>
+            <parent-name>[dim_date]</parent-name>
+            <remote-alias>day</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[dim!date_5B009C90D1754666A9C961608D96D610]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>month</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[month]</local-name>
+            <parent-name>[dim_date]</parent-name>
+            <remote-alias>month</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[dim!date_5B009C90D1754666A9C961608D96D610]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>month_name</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[month_name]</local-name>
+            <parent-name>[dim_date]</parent-name>
+            <remote-alias>month_name</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RID_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[dim!date_5B009C90D1754666A9C961608D96D610]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>quarter</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[quarter]</local-name>
+            <parent-name>[dim_date]</parent-name>
+            <remote-alias>quarter</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[dim!date_5B009C90D1754666A9C961608D96D610]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[year]</local-name>
+            <parent-name>[dim_date]</parent-name>
+            <remote-alias>year</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[dim!date_5B009C90D1754666A9C961608D96D610]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_weekend</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[is_weekend]</local-name>
+            <parent-name>[dim_date]</parent-name>
+            <remote-alias>is_weekend</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[dim!date_5B009C90D1754666A9C961608D96D610]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>demand_level_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[demand_level_id (dim!demand!level)]</local-name>
+            <parent-name>[dim_demand_level]</parent-name>
+            <remote-alias>demand_level_id</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[dim!demand!level_56186C6D861847499F593A664E2221B5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>demand_level</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[demand_level]</local-name>
+            <parent-name>[dim_demand_level]</parent-name>
+            <remote-alias>demand_level</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RID_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[dim!demand!level_56186C6D861847499F593A664E2221B5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>route_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[route_id (dim!route)]</local-name>
+            <parent-name>[dim_route]</parent-name>
+            <remote-alias>route_id</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[dim!route_D0A860D987C54265BF29DE4450BF3B57]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>origin</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[origin]</local-name>
+            <parent-name>[dim_route]</parent-name>
+            <remote-alias>origin</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RID_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[dim!route_D0A860D987C54265BF29DE4450BF3B57]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>destination</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[destination]</local-name>
+            <parent-name>[dim_route]</parent-name>
+            <remote-alias>destination</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RID_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[dim!route_D0A860D987C54265BF29DE4450BF3B57]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>route</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[route]</local-name>
+            <parent-name>[dim_route]</parent-name>
+            <remote-alias>route</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RID_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[dim!route_D0A860D987C54265BF29DE4450BF3B57]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>route_category</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[route_category]</local-name>
+            <parent-name>[dim_route]</parent-name>
+            <remote-alias>route_category</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RID_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[dim!route_D0A860D987C54265BF29DE4450BF3B57]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>season_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[season_id (dim!season)]</local-name>
+            <parent-name>[dim_season]</parent-name>
+            <remote-alias>season_id</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[dim!season_BC39F2781D6845ADAD778F1A7FC38D84]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>season</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[season]</local-name>
+            <parent-name>[dim_season]</parent-name>
+            <remote-alias>season</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RID_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[dim!season_BC39F2781D6845ADAD778F1A7FC38D84]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='dim_aircraft' datatype='table' name='[__tableau_internal_object_id__].[dim!aircraft_6692EB886436482596A73FB809FF788D]' role='measure' type='quantitative' />
+      <column caption='dim_date' datatype='table' name='[__tableau_internal_object_id__].[dim!date_5B009C90D1754666A9C961608D96D610]' role='measure' type='quantitative' />
+      <column caption='dim_demand_level' datatype='table' name='[__tableau_internal_object_id__].[dim!demand!level_56186C6D861847499F593A664E2221B5]' role='measure' type='quantitative' />
+      <column caption='dim_route' datatype='table' name='[__tableau_internal_object_id__].[dim!route_D0A860D987C54265BF29DE4450BF3B57]' role='measure' type='quantitative' />
+      <column caption='dim_season' datatype='table' name='[__tableau_internal_object_id__].[dim!season_BC39F2781D6845ADAD778F1A7FC38D84]' role='measure' type='quantitative' />
+      <column caption='fact_flight' datatype='table' name='[__tableau_internal_object_id__].[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]' role='measure' type='quantitative' />
+      <column caption='Aircraft Capacity' datatype='integer' name='[aircraft_capacity]' role='measure' type='quantitative' />
+      <column caption='Aircraft Id (Dim!Aircraft)' datatype='integer' name='[aircraft_id (dim!aircraft)]' role='dimension' type='ordinal' />
+      <column caption='Aircraft Id' datatype='integer' name='[aircraft_id]' role='dimension' type='ordinal' />
+      <column caption='Aircraft Type' datatype='string' name='[aircraft_type]' role='dimension' type='nominal' />
+      <column caption='Ancillary Revenue' datatype='real' name='[ancillary_revenue]' role='measure' type='quantitative' />
+      <column caption='Date Id (Dim!Date)' datatype='integer' name='[date_id (dim!date)]' role='dimension' type='ordinal' />
+      <column caption='Date Id' datatype='integer' name='[date_id]' role='dimension' type='ordinal' />
+      <column caption='Day' datatype='integer' name='[day]' role='dimension' type='quantitative' />
+      <column caption='Demand Level' datatype='string' name='[demand_level]' role='dimension' type='nominal' />
+      <column caption='Demand Level Id (Dim!Demand!Level)' datatype='integer' name='[demand_level_id (dim!demand!level)]' role='dimension' type='ordinal' />
+      <column caption='Demand Level Id' datatype='integer' name='[demand_level_id]' role='dimension' type='ordinal' />
+      <column caption='Destination' datatype='string' name='[destination]' role='dimension' type='nominal' />
+      <column caption='Flight Date' datatype='string' name='[flight_date]' role='dimension' type='nominal' />
+      <column caption='Flight Hours' datatype='real' name='[flight_hours]' role='measure' type='quantitative' />
+      <column caption='Flight Number' datatype='string' name='[flight_number]' role='dimension' type='nominal' />
+      <column caption='Is Weekend' datatype='integer' name='[is_weekend]' role='measure' type='quantitative' />
+      <column caption='Load Factor' datatype='real' name='[load_factor]' role='measure' type='quantitative' />
+      <column caption='Month' datatype='integer' name='[month]' role='dimension' type='quantitative' />
+      <column caption='Month Name' datatype='string' name='[month_name]' role='dimension' type='nominal' />
+      <column caption='Origin' datatype='string' name='[origin]' role='dimension' type='nominal' />
+      <column caption='Passengers' datatype='integer' name='[passengers]' role='measure' type='quantitative' />
+      <column caption='Profit' datatype='real' name='[profit]' role='measure' type='quantitative' />
+      <column caption='Profit Margin' datatype='real' name='[profit_margin]' role='measure' type='quantitative' />
+      <column caption='Quarter' datatype='integer' name='[quarter]' role='dimension' type='quantitative' />
+      <column caption='Route' datatype='string' name='[route]' role='dimension' type='nominal' />
+      <column caption='Route Category' datatype='string' name='[route_category]' role='dimension' type='nominal' />
+      <column caption='Route Id (Dim!Route)' datatype='integer' name='[route_id (dim!route)]' role='dimension' type='ordinal' />
+      <column caption='Route Id' datatype='integer' name='[route_id]' role='dimension' type='ordinal' />
+      <column caption='Season' datatype='string' name='[season]' role='dimension' type='nominal' />
+      <column caption='Season Id (Dim!Season)' datatype='integer' name='[season_id (dim!season)]' role='dimension' type='ordinal' />
+      <column caption='Season Id' datatype='integer' name='[season_id]' role='dimension' type='ordinal' />
+      <column caption='Ticket Revenue' datatype='real' name='[ticket_revenue]' role='measure' type='quantitative' />
+      <column caption='Total Cost' datatype='real' name='[total_cost]' role='measure' type='quantitative' />
+      <column caption='Total Revenue' datatype='real' name='[total_revenue]' role='measure' type='quantitative' />
+      <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
+      <extract count='-1' enabled='true' object-id='' units='records' user-specific='false'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='/var/folders/tq/8w4lzv51603gdj8v_nthzdnh0000gn/T/tableau-temp/#TableauTemp_1vlzjlz0i2936m1gxuilg18jx4rd.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='07/21/2026 07:19:57 AM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='fact!flight_C3F0329BF94D462BBD69A2F58C0408E5' table='[Extract].[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]' type='table' />
+            <relation name='dim!aircraft_6692EB886436482596A73FB809FF788D' table='[Extract].[dim!aircraft_6692EB886436482596A73FB809FF788D]' type='table' />
+            <relation name='dim!date_5B009C90D1754666A9C961608D96D610' table='[Extract].[dim!date_5B009C90D1754666A9C961608D96D610]' type='table' />
+            <relation name='dim!demand!level_56186C6D861847499F593A664E2221B5' table='[Extract].[dim!demand!level_56186C6D861847499F593A664E2221B5]' type='table' />
+            <relation name='dim!route_D0A860D987C54265BF29DE4450BF3B57' table='[Extract].[dim!route_D0A860D987C54265BF29DE4450BF3B57]' type='table' />
+            <relation name='dim!season_BC39F2781D6845ADAD778F1A7FC38D84' table='[Extract].[dim!season_BC39F2781D6845ADAD778F1A7FC38D84]' type='table' />
+          </relation>
+          <cols>
+            <map key='[Pivot Field Names]' value='[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5].[Pivot Field Names]' />
+            <map key='[Pivot Field Values]' value='[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5].[Pivot Field Values]' />
+            <map key='[aircraft_capacity]' value='[dim!aircraft_6692EB886436482596A73FB809FF788D].[aircraft_capacity]' />
+            <map key='[aircraft_id (dim!aircraft)]' value='[dim!aircraft_6692EB886436482596A73FB809FF788D].[aircraft_id]' />
+            <map key='[aircraft_id]' value='[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5].[aircraft_id]' />
+            <map key='[aircraft_type]' value='[dim!aircraft_6692EB886436482596A73FB809FF788D].[aircraft_type]' />
+            <map key='[ancillary_revenue]' value='[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5].[ancillary_revenue]' />
+            <map key='[date_id (dim!date)]' value='[dim!date_5B009C90D1754666A9C961608D96D610].[date_id]' />
+            <map key='[date_id]' value='[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5].[date_id]' />
+            <map key='[day]' value='[dim!date_5B009C90D1754666A9C961608D96D610].[day]' />
+            <map key='[demand_level]' value='[dim!demand!level_56186C6D861847499F593A664E2221B5].[demand_level]' />
+            <map key='[demand_level_id (dim!demand!level)]' value='[dim!demand!level_56186C6D861847499F593A664E2221B5].[demand_level_id]' />
+            <map key='[demand_level_id]' value='[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5].[demand_level_id]' />
+            <map key='[destination]' value='[dim!route_D0A860D987C54265BF29DE4450BF3B57].[destination]' />
+            <map key='[flight_date]' value='[dim!date_5B009C90D1754666A9C961608D96D610].[flight_date]' />
+            <map key='[flight_hours]' value='[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5].[flight_hours]' />
+            <map key='[flight_number]' value='[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5].[flight_number]' />
+            <map key='[is_weekend]' value='[dim!date_5B009C90D1754666A9C961608D96D610].[is_weekend]' />
+            <map key='[load_factor]' value='[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5].[load_factor]' />
+            <map key='[month]' value='[dim!date_5B009C90D1754666A9C961608D96D610].[month]' />
+            <map key='[month_name]' value='[dim!date_5B009C90D1754666A9C961608D96D610].[month_name]' />
+            <map key='[origin]' value='[dim!route_D0A860D987C54265BF29DE4450BF3B57].[origin]' />
+            <map key='[passengers]' value='[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5].[passengers]' />
+            <map key='[profit]' value='[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5].[profit]' />
+            <map key='[profit_margin]' value='[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5].[profit_margin]' />
+            <map key='[quarter]' value='[dim!date_5B009C90D1754666A9C961608D96D610].[quarter]' />
+            <map key='[route]' value='[dim!route_D0A860D987C54265BF29DE4450BF3B57].[route]' />
+            <map key='[route_category]' value='[dim!route_D0A860D987C54265BF29DE4450BF3B57].[route_category]' />
+            <map key='[route_id (dim!route)]' value='[dim!route_D0A860D987C54265BF29DE4450BF3B57].[route_id]' />
+            <map key='[route_id]' value='[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5].[route_id]' />
+            <map key='[season]' value='[dim!season_BC39F2781D6845ADAD778F1A7FC38D84].[season]' />
+            <map key='[season_id (dim!season)]' value='[dim!season_BC39F2781D6845ADAD778F1A7FC38D84].[season_id]' />
+            <map key='[season_id]' value='[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5].[season_id]' />
+            <map key='[ticket_revenue]' value='[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5].[ticket_revenue]' />
+            <map key='[total_cost]' value='[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5].[total_cost]' />
+            <map key='[total_revenue]' value='[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5].[total_revenue]' />
+            <map key='[year]' value='[dim!date_5B009C90D1754666A9C961608D96D610].[year]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>flight_number</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[flight_number]</local-name>
+              <parent-name>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</parent-name>
+              <remote-alias>flight_number</remote-alias>
+              <ordinal>0</ordinal>
+              <family>fact_flight</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>23487</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>date_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[date_id]</local-name>
+              <parent-name>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</parent-name>
+              <remote-alias>date_id</remote-alias>
+              <ordinal>1</ordinal>
+              <family>fact_flight</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1023</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>route_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[route_id]</local-name>
+              <parent-name>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</parent-name>
+              <remote-alias>route_id</remote-alias>
+              <ordinal>2</ordinal>
+              <family>fact_flight</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>30</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>aircraft_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[aircraft_id]</local-name>
+              <parent-name>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</parent-name>
+              <remote-alias>aircraft_id</remote-alias>
+              <ordinal>3</ordinal>
+              <family>fact_flight</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>demand_level_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[demand_level_id]</local-name>
+              <parent-name>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</parent-name>
+              <remote-alias>demand_level_id</remote-alias>
+              <ordinal>4</ordinal>
+              <family>fact_flight</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>season_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[season_id]</local-name>
+              <parent-name>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</parent-name>
+              <remote-alias>season_id</remote-alias>
+              <ordinal>5</ordinal>
+              <family>fact_flight</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>passengers</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[passengers]</local-name>
+              <parent-name>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</parent-name>
+              <remote-alias>passengers</remote-alias>
+              <ordinal>6</ordinal>
+              <family>fact_flight</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1048</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>load_factor</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[load_factor]</local-name>
+              <parent-name>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</parent-name>
+              <remote-alias>load_factor</remote-alias>
+              <ordinal>7</ordinal>
+              <family>fact_flight</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>9984</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>flight_hours</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[flight_hours]</local-name>
+              <parent-name>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</parent-name>
+              <remote-alias>flight_hours</remote-alias>
+              <ordinal>8</ordinal>
+              <family>fact_flight</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>21</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ticket_revenue</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[ticket_revenue]</local-name>
+              <parent-name>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</parent-name>
+              <remote-alias>ticket_revenue</remote-alias>
+              <ordinal>9</ordinal>
+              <family>fact_flight</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>23487</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ancillary_revenue</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[ancillary_revenue]</local-name>
+              <parent-name>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</parent-name>
+              <remote-alias>ancillary_revenue</remote-alias>
+              <ordinal>10</ordinal>
+              <family>fact_flight</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>22608</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_revenue</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[total_revenue]</local-name>
+              <parent-name>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</parent-name>
+              <remote-alias>total_revenue</remote-alias>
+              <ordinal>11</ordinal>
+              <family>fact_flight</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>23487</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_cost</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[total_cost]</local-name>
+              <parent-name>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</parent-name>
+              <remote-alias>total_cost</remote-alias>
+              <ordinal>12</ordinal>
+              <family>fact_flight</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>23487</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>profit</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[profit]</local-name>
+              <parent-name>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</parent-name>
+              <remote-alias>profit</remote-alias>
+              <ordinal>13</ordinal>
+              <family>fact_flight</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>23487</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>profit_margin</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[profit_margin]</local-name>
+              <parent-name>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</parent-name>
+              <remote-alias>profit_margin</remote-alias>
+              <ordinal>14</ordinal>
+              <family>fact_flight</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>23487</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Pivot Field Names</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Pivot Field Names]</local-name>
+              <parent-name>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</parent-name>
+              <remote-alias>Pivot Field Names</remote-alias>
+              <ordinal>15</ordinal>
+              <family>Pivot</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>14</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Pivot Field Values</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Pivot Field Values]</local-name>
+              <parent-name>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</parent-name>
+              <remote-alias>Pivot Field Values</remote-alias>
+              <ordinal>16</ordinal>
+              <family>Pivot</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>15301</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>aircraft_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[aircraft_id (dim!aircraft)]</local-name>
+              <parent-name>[dim!aircraft_6692EB886436482596A73FB809FF788D]</parent-name>
+              <remote-alias>aircraft_id</remote-alias>
+              <ordinal>17</ordinal>
+              <family>dim_aircraft</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[dim!aircraft_6692EB886436482596A73FB809FF788D]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>aircraft_type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[aircraft_type]</local-name>
+              <parent-name>[dim!aircraft_6692EB886436482596A73FB809FF788D]</parent-name>
+              <remote-alias>aircraft_type</remote-alias>
+              <ordinal>18</ordinal>
+              <family>dim_aircraft</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[dim!aircraft_6692EB886436482596A73FB809FF788D]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>aircraft_capacity</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[aircraft_capacity]</local-name>
+              <parent-name>[dim!aircraft_6692EB886436482596A73FB809FF788D]</parent-name>
+              <remote-alias>aircraft_capacity</remote-alias>
+              <ordinal>19</ordinal>
+              <family>dim_aircraft</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[dim!aircraft_6692EB886436482596A73FB809FF788D]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>date_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[date_id (dim!date)]</local-name>
+              <parent-name>[dim!date_5B009C90D1754666A9C961608D96D610]</parent-name>
+              <remote-alias>date_id</remote-alias>
+              <ordinal>20</ordinal>
+              <family>dim_date</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>366</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[dim!date_5B009C90D1754666A9C961608D96D610]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>flight_date</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[flight_date]</local-name>
+              <parent-name>[dim!date_5B009C90D1754666A9C961608D96D610]</parent-name>
+              <remote-alias>flight_date</remote-alias>
+              <ordinal>21</ordinal>
+              <family>dim_date</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>366</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[dim!date_5B009C90D1754666A9C961608D96D610]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>day</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[day]</local-name>
+              <parent-name>[dim!date_5B009C90D1754666A9C961608D96D610]</parent-name>
+              <remote-alias>day</remote-alias>
+              <ordinal>22</ordinal>
+              <family>dim_date</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>31</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[dim!date_5B009C90D1754666A9C961608D96D610]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>month</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[month]</local-name>
+              <parent-name>[dim!date_5B009C90D1754666A9C961608D96D610]</parent-name>
+              <remote-alias>month</remote-alias>
+              <ordinal>23</ordinal>
+              <family>dim_date</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[dim!date_5B009C90D1754666A9C961608D96D610]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>month_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[month_name]</local-name>
+              <parent-name>[dim!date_5B009C90D1754666A9C961608D96D610]</parent-name>
+              <remote-alias>month_name</remote-alias>
+              <ordinal>24</ordinal>
+              <family>dim_date</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[dim!date_5B009C90D1754666A9C961608D96D610]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>quarter</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[quarter]</local-name>
+              <parent-name>[dim!date_5B009C90D1754666A9C961608D96D610]</parent-name>
+              <remote-alias>quarter</remote-alias>
+              <ordinal>25</ordinal>
+              <family>dim_date</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[dim!date_5B009C90D1754666A9C961608D96D610]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[year]</local-name>
+              <parent-name>[dim!date_5B009C90D1754666A9C961608D96D610]</parent-name>
+              <remote-alias>year</remote-alias>
+              <ordinal>26</ordinal>
+              <family>dim_date</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[dim!date_5B009C90D1754666A9C961608D96D610]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_weekend</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[is_weekend]</local-name>
+              <parent-name>[dim!date_5B009C90D1754666A9C961608D96D610]</parent-name>
+              <remote-alias>is_weekend</remote-alias>
+              <ordinal>27</ordinal>
+              <family>dim_date</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[dim!date_5B009C90D1754666A9C961608D96D610]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>demand_level_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[demand_level_id (dim!demand!level)]</local-name>
+              <parent-name>[dim!demand!level_56186C6D861847499F593A664E2221B5]</parent-name>
+              <remote-alias>demand_level_id</remote-alias>
+              <ordinal>28</ordinal>
+              <family>dim_demand_level</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[dim!demand!level_56186C6D861847499F593A664E2221B5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>demand_level</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[demand_level]</local-name>
+              <parent-name>[dim!demand!level_56186C6D861847499F593A664E2221B5]</parent-name>
+              <remote-alias>demand_level</remote-alias>
+              <ordinal>29</ordinal>
+              <family>dim_demand_level</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[dim!demand!level_56186C6D861847499F593A664E2221B5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>route_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[route_id (dim!route)]</local-name>
+              <parent-name>[dim!route_D0A860D987C54265BF29DE4450BF3B57]</parent-name>
+              <remote-alias>route_id</remote-alias>
+              <ordinal>30</ordinal>
+              <family>dim_route</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>30</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[dim!route_D0A860D987C54265BF29DE4450BF3B57]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>origin</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[origin]</local-name>
+              <parent-name>[dim!route_D0A860D987C54265BF29DE4450BF3B57]</parent-name>
+              <remote-alias>origin</remote-alias>
+              <ordinal>31</ordinal>
+              <family>dim_route</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[dim!route_D0A860D987C54265BF29DE4450BF3B57]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>destination</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[destination]</local-name>
+              <parent-name>[dim!route_D0A860D987C54265BF29DE4450BF3B57]</parent-name>
+              <remote-alias>destination</remote-alias>
+              <ordinal>32</ordinal>
+              <family>dim_route</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>30</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[dim!route_D0A860D987C54265BF29DE4450BF3B57]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>route</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[route]</local-name>
+              <parent-name>[dim!route_D0A860D987C54265BF29DE4450BF3B57]</parent-name>
+              <remote-alias>route</remote-alias>
+              <ordinal>33</ordinal>
+              <family>dim_route</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>30</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[dim!route_D0A860D987C54265BF29DE4450BF3B57]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>route_category</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[route_category]</local-name>
+              <parent-name>[dim!route_D0A860D987C54265BF29DE4450BF3B57]</parent-name>
+              <remote-alias>route_category</remote-alias>
+              <ordinal>34</ordinal>
+              <family>dim_route</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[dim!route_D0A860D987C54265BF29DE4450BF3B57]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>season_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[season_id (dim!season)]</local-name>
+              <parent-name>[dim!season_BC39F2781D6845ADAD778F1A7FC38D84]</parent-name>
+              <remote-alias>season_id</remote-alias>
+              <ordinal>35</ordinal>
+              <family>dim_season</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[dim!season_BC39F2781D6845ADAD778F1A7FC38D84]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>season</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[season]</local-name>
+              <parent-name>[dim!season_BC39F2781D6845ADAD778F1A7FC38D84]</parent-name>
+              <remote-alias>season</remote-alias>
+              <ordinal>36</ordinal>
+              <family>dim_season</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[dim!season_BC39F2781D6845ADAD778F1A7FC38D84]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Indonesia&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='dim_aircraft' id='dim!aircraft_6692EB886436482596A73FB809FF788D'>
+            <properties context=''>
+              <relation connection='excel-direct.1ueidq506d4km613go5rm1tx3epl' name='dim_aircraft' table='[dim_aircraft$]' type='table'>
+                <columns gridOrigin='A1:C7:no:A1:C7:0' header='yes' outcome='6'>
+                  <column datatype='integer' name='aircraft_id' ordinal='0' />
+                  <column datatype='string' name='aircraft_type' ordinal='1' />
+                  <column datatype='integer' name='aircraft_capacity' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='dim!aircraft_6692EB886436482596A73FB809FF788D' table='[Extract].[dim!aircraft_6692EB886436482596A73FB809FF788D]' type='table' />
+            </properties>
+          </object>
+          <object caption='dim_date' id='dim!date_5B009C90D1754666A9C961608D96D610'>
+            <properties context=''>
+              <relation connection='excel-direct.1ueidq506d4km613go5rm1tx3epl' name='dim_date' table='[dim_date$]' type='table'>
+                <columns gridOrigin='A1:H367:no:A1:H367:0' header='yes' outcome='6'>
+                  <column datatype='integer' name='date_id' ordinal='0' />
+                  <column datatype='string' name='flight_date' ordinal='1' />
+                  <column datatype='integer' name='day' ordinal='2' />
+                  <column datatype='integer' name='month' ordinal='3' />
+                  <column datatype='string' name='month_name' ordinal='4' />
+                  <column datatype='integer' name='quarter' ordinal='5' />
+                  <column datatype='integer' name='year' ordinal='6' />
+                  <column datatype='integer' name='is_weekend' ordinal='7' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='dim!date_5B009C90D1754666A9C961608D96D610' table='[Extract].[dim!date_5B009C90D1754666A9C961608D96D610]' type='table' />
+            </properties>
+          </object>
+          <object caption='dim_demand_level' id='dim!demand!level_56186C6D861847499F593A664E2221B5'>
+            <properties context=''>
+              <relation connection='excel-direct.1ueidq506d4km613go5rm1tx3epl' name='dim_demand_level' table='[dim_demand_level$]' type='table'>
+                <columns gridOrigin='A1:B3:no:A1:B3:0' header='yes' outcome='6'>
+                  <column datatype='integer' name='demand_level_id' ordinal='0' />
+                  <column datatype='string' name='demand_level' ordinal='1' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='dim!demand!level_56186C6D861847499F593A664E2221B5' table='[Extract].[dim!demand!level_56186C6D861847499F593A664E2221B5]' type='table' />
+            </properties>
+          </object>
+          <object caption='dim_route' id='dim!route_D0A860D987C54265BF29DE4450BF3B57'>
+            <properties context=''>
+              <relation connection='excel-direct.1ueidq506d4km613go5rm1tx3epl' name='dim_route' table='[dim_route$]' type='table'>
+                <columns gridOrigin='A1:E31:no:A1:E31:0' header='yes' outcome='6'>
+                  <column datatype='integer' name='route_id' ordinal='0' />
+                  <column datatype='string' name='origin' ordinal='1' />
+                  <column datatype='string' name='destination' ordinal='2' />
+                  <column datatype='string' name='route' ordinal='3' />
+                  <column datatype='string' name='route_category' ordinal='4' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='dim!route_D0A860D987C54265BF29DE4450BF3B57' table='[Extract].[dim!route_D0A860D987C54265BF29DE4450BF3B57]' type='table' />
+            </properties>
+          </object>
+          <object caption='dim_season' id='dim!season_BC39F2781D6845ADAD778F1A7FC38D84'>
+            <properties context=''>
+              <relation connection='excel-direct.1ueidq506d4km613go5rm1tx3epl' name='dim_season' table='[dim_season$]' type='table'>
+                <columns gridOrigin='A1:B5:no:A1:B5:0' header='yes' outcome='6'>
+                  <column datatype='integer' name='season_id' ordinal='0' />
+                  <column datatype='string' name='season' ordinal='1' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='dim!season_BC39F2781D6845ADAD778F1A7FC38D84' table='[Extract].[dim!season_BC39F2781D6845ADAD778F1A7FC38D84]' type='table' />
+            </properties>
+          </object>
+          <object caption='fact_flight' id='fact!flight_C3F0329BF94D462BBD69A2F58C0408E5'>
+            <properties context=''>
+              <relation name='Pivot' type='pivot'>
+                <columns>
+                  <column datatype='string' name='Pivot Field Names' />
+                  <column datatype='real' name='Pivot Field Values' />
+                </columns>
+                <tag name='Pivot Field Names'>
+                  <value name='[Airport Fees]' />
+                  <value name='[Catering Cost]' />
+                  <value name='[Crew Cost]' />
+                  <value name='[Depreciation Cost]' />
+                  <value name='[Fuel Cost]' />
+                  <value name='[Handling Cost]' />
+                  <value name='[Insurance Cost]' />
+                  <value name='[It Systems Cost]' />
+                  <value name='[Maintenance Cost]' />
+                  <value name='[Marketing Cost]' />
+                  <value name='[Navigation Fees]' />
+                  <value name='[Overhead Cost]' />
+                  <value name='[Passenger Service Cost]' />
+                  <value name='[Sales Distribution Cost]' />
+                </tag>
+                <groups>
+                  <group name='Pivot Field Values'>
+                    <field name='[fact_flight].[airport_fees]' />
+                    <field name='[fact_flight].[catering_cost]' />
+                    <field name='[fact_flight].[crew_cost]' />
+                    <field name='[fact_flight].[depreciation_cost]' />
+                    <field name='[fact_flight].[fuel_cost]' />
+                    <field name='[fact_flight].[handling_cost]' />
+                    <field name='[fact_flight].[insurance_cost]' />
+                    <field name='[fact_flight].[it_systems_cost]' />
+                    <field name='[fact_flight].[maintenance_cost]' />
+                    <field name='[fact_flight].[marketing_cost]' />
+                    <field name='[fact_flight].[navigation_fees]' />
+                    <field name='[fact_flight].[overhead_cost]' />
+                    <field name='[fact_flight].[passenger_service_cost]' />
+                    <field name='[fact_flight].[sales_distribution_cost]' />
+                  </group>
+                </groups>
+                <relation connection='excel-direct.1ueidq506d4km613go5rm1tx3epl' name='fact_flight' table='[fact_flight$]' type='table'>
+                  <columns gridOrigin='A1:AC7975:no:A1:AC7975:0' header='yes' outcome='6'>
+                    <column datatype='string' name='flight_number' ordinal='0' />
+                    <column datatype='integer' name='date_id' ordinal='1' />
+                    <column datatype='integer' name='route_id' ordinal='2' />
+                    <column datatype='integer' name='aircraft_id' ordinal='3' />
+                    <column datatype='integer' name='demand_level_id' ordinal='4' />
+                    <column datatype='integer' name='season_id' ordinal='5' />
+                    <column datatype='integer' name='passengers' ordinal='6' />
+                    <column datatype='real' name='load_factor' ordinal='7' />
+                    <column datatype='real' name='flight_hours' ordinal='8' />
+                    <column datatype='real' name='ticket_revenue' ordinal='9' />
+                    <column datatype='real' name='ancillary_revenue' ordinal='10' />
+                    <column datatype='real' name='total_revenue' ordinal='11' />
+                    <column datatype='real' name='fuel_cost' ordinal='12' />
+                    <column datatype='integer' name='maintenance_cost' ordinal='13' />
+                    <column datatype='integer' name='crew_cost' ordinal='14' />
+                    <column datatype='integer' name='depreciation_cost' ordinal='15' />
+                    <column datatype='integer' name='insurance_cost' ordinal='16' />
+                    <column datatype='real' name='airport_fees' ordinal='17' />
+                    <column datatype='real' name='catering_cost' ordinal='18' />
+                    <column datatype='real' name='handling_cost' ordinal='19' />
+                    <column datatype='real' name='navigation_fees' ordinal='20' />
+                    <column datatype='real' name='sales_distribution_cost' ordinal='21' />
+                    <column datatype='real' name='passenger_service_cost' ordinal='22' />
+                    <column datatype='real' name='overhead_cost' ordinal='23' />
+                    <column datatype='real' name='marketing_cost' ordinal='24' />
+                    <column datatype='real' name='it_systems_cost' ordinal='25' />
+                    <column datatype='real' name='total_cost' ordinal='26' />
+                    <column datatype='real' name='profit' ordinal='27' />
+                    <column datatype='real' name='profit_margin' ordinal='28' />
+                  </columns>
+                </relation>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='fact!flight_C3F0329BF94D462BBD69A2F58C0408E5' table='[Extract].[fact!flight_C3F0329BF94D462BBD69A2F58C0408E5]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[aircraft_id]' />
+              <expression op='[aircraft_id (dim!aircraft)]' />
+            </expression>
+            <first-end-point object-id='fact!flight_C3F0329BF94D462BBD69A2F58C0408E5' />
+            <second-end-point object-id='dim!aircraft_6692EB886436482596A73FB809FF788D' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[date_id]' />
+              <expression op='[date_id (dim!date)]' />
+            </expression>
+            <first-end-point object-id='fact!flight_C3F0329BF94D462BBD69A2F58C0408E5' />
+            <second-end-point object-id='dim!date_5B009C90D1754666A9C961608D96D610' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[demand_level_id]' />
+              <expression op='[demand_level_id (dim!demand!level)]' />
+            </expression>
+            <first-end-point object-id='fact!flight_C3F0329BF94D462BBD69A2F58C0408E5' />
+            <second-end-point object-id='dim!demand!level_56186C6D861847499F593A664E2221B5' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[route_id]' />
+              <expression op='[route_id (dim!route)]' />
+            </expression>
+            <first-end-point object-id='fact!flight_C3F0329BF94D462BBD69A2F58C0408E5' />
+            <second-end-point object-id='dim!route_D0A860D987C54265BF29DE4450BF3B57' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[season_id]' />
+              <expression op='[season_id (dim!season)]' />
+            </expression>
+            <first-end-point object-id='fact!flight_C3F0329BF94D462BBD69A2F58C0408E5' />
+            <second-end-point object-id='dim!season_BC39F2781D6845ADAD778F1A7FC38D84' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{1E3EF66F-3C49-4AE0-A838-697067103827}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{FF435E6A-7576-42AB-B68D-CA86F86555EC}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='384' name='Sheet 1' width='384'>
+      iVBORw0KGgoAAAANSUhEUgAAAYAAAAGACAYAAACkx7W/AAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAFXUlEQVR4nO3VMQEAIAzAMMC/5yFjRxMF/XpnZg4AOW87AIAdBgAQZQAAUQYAEGUAAFEG
+      ABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAA
+      UQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBl
+      AABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYA
+      EGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABR
+      BgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUA
+      AFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQ
+      ZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEG
+      ABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAA
+      UQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBl
+      AABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYA
+      EGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABR
+      BgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUA
+      AFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQ
+      ZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEG
+      ABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAA
+      UQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBl
+      AABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYA
+      EGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABR
+      BgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUA
+      AFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQ
+      ZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEG
+      ABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAA
+      UQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBl
+      AABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYA
+      EGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEfFxoG/IiMv0YAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
